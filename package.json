@@ -4,6 +4,7 @@
   "description": "",
   "main": "keys.js",
   "dependencies": {
+    "jsonfile": "^2.4.0",
     "twitter": "^1.7.0"
   },
   "devDependencies": {},
