@@ -2,10 +2,11 @@
 # Dixby Bot
 
 ### DIXBY is like iPhone's SIRI. 
-However, while SIRI is a Speech Interpretation and Recognition Interface, DIXBY is a command line interface. DIXBY will be a 
-command line node app that takes in parameters and gives you back data.
+### However, while SIRI is a Speech Interpretation and Recognition Interface, DIXBY is a command line interface. DIXBY will be a command line node app that takes in parameters and gives you back data.
 ----------------------------------------------
+
 ### Command Line Commands
+
 1. `node dixby.js my-tweets`
 
    * This will show your last 20 tweets and when they were created at in your terminal/bash window.
@@ -18,7 +19,7 @@ command line node app that takes in parameters and gives you back data.
      * A preview link of the song from Spotify
      * The album that the song is from
 
-   * if no song is provided then your program will default to
+   * if no song is provided then it will default to
      * "The Sign" by Ace of Base
 
 3. `node dixby.js movie-this '<movie name here>'`
