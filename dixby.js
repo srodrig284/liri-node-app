@@ -66,6 +66,17 @@ switch (user_request)
         break;
 };
 
+/**
+ ******************** BEGINNING OF FUNCTIONS********************
+ */
+
+/**
+ *  Function: getMyTweets
+ *         This function makes an API call to twitter and returns the last
+ *         20 tweets for a specific person.  The data will be displayed in the
+ *         terminal/bash window.  In addition, it will also log the data to
+ *         a txt file called log.txt.
+ */
 function getMyTweets(){
     var params = {screen_name: 'realDonaldTrump', count: 20};
     //var params = {screen_name: 'SandraR0218', count: 20};
@@ -109,6 +120,14 @@ function getMyTweets(){
     });
 } // end function getMyTweets
 
+/**
+ *   Function:  spotifySong
+ *          This function will make an API call to spotify for a the
+ *          song requested by the user.  It will display to the
+ *          terminal/bash window.  In addition, it will also log the data to
+ *         a txt file called log.txt.
+ * @param song
+ */
 function spotifySong(song){
     spotify.search({ type: 'track', query: song }, function(err, data) {
         if ( err ) {
@@ -178,7 +197,14 @@ function spotifySong(song){
     });
 } // end function spotifySong
 
-
+/**
+ *   Function:  findMovie
+ *          This function will make an API call to OMDB for a the
+ *          movie requested by the user.  It will display to the
+ *          terminal/bash window.  In addition, it will also log the data to
+ *         a txt file called log.txt.
+ * @param movie
+ */
 function findMovie(movie){
     // replace whitespace with '+'.
     // This will prepare the user's input to be appended to the url search string
@@ -281,7 +307,11 @@ function findMovie(movie){
 } // end findMovie
 
 /**
- *
+ *   Function:  doWhatItSays
+ *          This function will read the random.txt file and make an API call to
+ *          the API requested by the user.  It will display to the
+ *          terminal/bash window.  In addition, it will also log the data to
+ *         a txt file called log.txt.
  */
 function doWhatItSays()
 {
