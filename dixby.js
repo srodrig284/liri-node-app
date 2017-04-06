@@ -67,15 +67,17 @@ switch (user_request)
 };
 
 function getMyTweets(){
-    var params = {screen_name: 'SandraR0218'};
-    client.get('statuses/user_timeline',params, function(error, tweets, response) {
+    var params = {screen_name: 'realDonaldTrump', count: 20};
+    //var params = {screen_name: 'SandraR0218', count: 20};
+    client.get('statuses/user_timeline.json',params, function(error, tweets, response) {
         if(error) throw error;
 
-        console.log(tweets);  // display tweets
+        //console.log(tweets);  // display tweets
 
         var todayDate = new Date();
         //console.log("Date: ",todayDate);
 
+        console.log(tweets[0].user.name + "'s latest tweets as of " + todayDate + "\n");
         fs.appendFile("log.txt", tweets[0].user.name + "'s latest tweets as of " + todayDate + "\n\n", function (err) {
             // If there was an error, we log it and return immediately
             if (err) {
@@ -85,18 +87,18 @@ function getMyTweets(){
 
         if(tweets.length > 0) {
             for (i = 0; i < tweets.length; i++) {
-                fs.appendFile("log.txt", JSON.stringify(tweets[i]) + "\n\n", function (err) {
+                console.log("Created at: " + tweets[i].created_at + "\n" + JSON.stringify(tweets[i].text) + "\n");
+                fs.appendFile("log.txt", "Created at: " + tweets[i].created_at + "\n" + JSON.stringify(tweets[i].text) + "\n\n", function (err) {
                     // If there was an error, we log it and return immediately
                     if (err) {
                         return console.log(err);
                     }
                 });
             }
-            ;
         }
         else{
             console.log("No tweets found for " + tweets[0].user.name);
-        };
+        }
 
         fs.appendFile("log.txt", "======================================================\n\n", function (err) {
             // If there was an error, we log it and return immediately
