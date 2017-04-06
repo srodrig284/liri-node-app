@@ -22,22 +22,18 @@ switch (user_request)
         break;
 
     case 'spotify-this-song':
+        var song = ('The Sign');
+
         if(process.argv.length > 3) {
             var arg = process.argv.shift(); // skip node.exe
             var arg2 = process.argv.shift();  // skip name of js file
             var aug3 = process.argv.shift(); // skip spotify-this-song
 
             //console.log(process.argv.join(" "));
-            var song = JSON.stringify(process.argv.join(" ").replace(/\'/gi, ""));
+            song = JSON.stringify(process.argv.join(" ").replace(/\'/gi, ""));
             //console.log(song);
-
-            spotifySong(song);
         }
-        else{
-            //console.log("Please enter spotify-this-song and song name");
-            // else spotify the default song
-            spotifySong('The Sign');
-        }
+        spotifySong(song);
         break;
 
     case 'movie-this':
@@ -50,7 +46,7 @@ switch (user_request)
 
             //console.log(process.argv.join(" "));
             movie = JSON.stringify(process.argv.join(" ").replace(/\'/gi, ""));
-            //console.log(song);
+            //console.log(movie);
         }
         findMovie(movie);
 
