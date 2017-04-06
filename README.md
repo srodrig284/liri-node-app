@@ -47,4 +47,4 @@
      * It should run `spotify-this-song` for "I Want it That Way," as follows the text in `random.txt`.
      * Feel free to change the text in that document to test out the feature for other commands.
 
-## * In addition to logging the data to your terminal/bash window, output the data to a .txt file called `log.txt`.
+### * In addition to logging the data to your terminal/bash window, the data will be written to a .txt file called `log.txt`.
